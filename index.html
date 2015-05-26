@@ -5,18 +5,6 @@
 
     <title></title>
     <style type="text/css">
-        div {
-            z-index: 50;
-        }
-        div.js {
-            z-index:3;
-        }
-        div.js2 {
-            z-index:2;
-        }
-        div.js3 {
-            z-index:1;
-        }
         .nocss {
             margin: 0;
             padding: 0;
@@ -24,6 +12,14 @@
         .container {
             position: fixed;
             width: 100%;
+        }
+
+        #browser-holder {
+            z-index:50;
+            position: fixed;
+        }
+        #third {
+            z-index:1;
         }
 
         .browser-table {
@@ -109,6 +105,12 @@
             font-weight:bold;
             text-decoration:none;
         }
+        .html1 {
+            font-family: "Lucida Console", monospace;
+            background: #393939;
+            height: 100%;
+            color: #b2c4cf;
+        }
 
     </style>
     <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
@@ -120,8 +122,7 @@
         function runParallax() {
             var s = skrollr.init({
                 smoothScrolling: true,
-                render: function (data) {
-//                    console.log(data.curTop);
+                render: function (data) { //console.log(data.curTop);
                 }
             });
             return s;
@@ -138,7 +139,7 @@
 
 <div prlx-start="opacity: 0;"
      prlx-end="opacity: 1;"
-     prlx-ratio="1"
+     prlx-ratio="0.5"
      id="first"
      class="prlx">
     <div class="container">
@@ -148,20 +149,9 @@
 
 <div prlx-start="opacity: 0;"
      prlx-end="opacity: 1;"
-     prlx-ratio="2.2"
-     prlx-after="second"
-     id="third"
-     class="prlx">
-    <div class="container" style="margin-top:50px;">
-        <h1>HTML</h1>
-    </div>
-</div>
-
-<div prlx-start="opacity: 0;"
-     prlx-end="opacity: 1;"
-     prlx-ratio="3"
+     prlx-ratio="1.5"
      class="prlx"
-     id="second">
+     id="browser-holder">
     <div class="container">
         <div id="browser" style=" width: 100%; margin:auto; padding-top: 120px;">
             <div class="browser-table">
@@ -170,13 +160,92 @@
                     <div class="browser-btn maximize"></div>
                     <div class="browser-btn close"></div>
                 </div>
-                <div class="browser-led"></div>
+                <div class="browser-led">
+                    <div prlx-start="opacity: 0; display:block;"
+                         prlx-end="opacity: 1;"
+                         prlx-ratio="0.5"
+                         prlx-after="third"
+
+                         prlx-start-1="display:none;"
+                         prlx-end-1="display:none;"
+                         prlx-ratio-1="0"
+                         prlx-after-1="txt-html5"
+                         class="prlx prlx-linked html1"
+                         id="browser-html1"
+                         data-bottom="display:none;">
+                        <div>
+                            &#x3C;html&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;body&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;h1&#x3E;Ola mundo!&#x3C;/h1&#x3E;<br /><br />
+                            &nbsp;&nbsp;&#x3C;/body&#x3E;<br />
+                            <br />
+                            &#x3C;/html&#x3E;<br />
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 1; display:block;"
+                         prlx-end="opacity: 1;"
+                         prlx-ratio="0.5"
+                         prlx-after="txt-html5"
+
+                         prlx-start-1="opacity: 1;"
+                         prlx-end-1="opacity: 0; display:none;"
+                         prlx-ratio-1="1"
+                         prlx-after-1="browser-html5"
+                         class="prlx prlx-linked html1 html5"
+                         id="browser-html5"
+                         data-bottom="display:none;">
+                        <div>
+                            &#x3C;html&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;body&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;h1&#x3E;Ola mundo!&#x3C;/h1&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;section&#x3E;Bem vindo ao meu Curriculum&#x3C;/section&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/body&#x3E;<br />
+                            <br />
+                            &#x3C;/html&#x3E;<br />
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 1; display:none;"
+                         prlx-end="opacity: 1; display:block;"
+                         prlx-ratio="1"
+                         prlx-after="browser-html5"
+                         class="prlx"
+                         id="browser-inputs"
+                         data-bottom="display:none;">
+                        <div>
+                           <h1 style="margin-top:0;">Olá mundo!</h1>
+                            <section>Bem vindo ao meu Curriculum!</section>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
+<div prlx-start="padding-left[sqrt]: 100%;"
+     prlx-end="padding-left: 64%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-holder"
+     id="third"
+     class="prlx">
+    <div class="container" style="margin-top:160px; position:fixed; z-index: 1;">
+        <h1>HTML</h1>
+    </div>
+</div>
+<div prlx-start="padding-left[sqrt]: 100%;"
+     prlx-end="padding-left: 64%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-html1"
+     id="txt-html5"
+     class="prlx">
+    <div class="container" style="margin-top:180px; position:fixed; z-index: 1;">
+        <h1>HTML5</h1>
+    </div>
+</div>
 
 
 
