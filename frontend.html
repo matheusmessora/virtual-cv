@@ -1,0 +1,263 @@
+<div prlx-start="opacity: 0;"
+     prlx-end="opacity: 1;"
+     prlx-ratio="0.5"
+     id="first"
+     class="prlx">
+    <div class="container">
+        <h1>Frontend</h1>
+    </div>
+</div>
+
+<div prlx-start="opacity: 0;"
+     prlx-end="opacity: 1;"
+     prlx-ratio="2"
+     prlx-after="first"
+     class="prlx"
+     id="browser-holder">
+    <div class="container">
+        <div id="browser" style=" width: 100%; margin:auto; padding-top: 120px;">
+            <div class="browser-table">
+                <div class="browser-btn-holder">
+                    <div class="browser-btn minimize"></div>
+                    <div class="browser-btn maximize"></div>
+                    <div class="browser-btn close"></div>
+                </div>
+                <div class="browser-led">
+                    <div id="browser-loading" class="browser-loading">
+                        <div prlx-start="margin-right: 100%; display:block;"
+                             prlx-end="margin-right: 0%; display:block;"
+                             prlx-ratio="2.8"
+                             prlx-after="browser-holder"
+
+                             prlx-start-1="display:none;"
+                             prlx-end-1="display:none;"
+                             prlx-ratio-1="0"
+                             prlx-after-1="browser-loading1-waiter"
+                             class="prlx prlx-linked blue"
+                             id="browser-loading1">
+                            &nbsp;
+                            <div prlx-start="display:none"
+                                 prlx-end="display:none"
+                                 prlx-ratio="3"
+                                 prlx-after="browser-loading1"
+                                 class="prlx"
+                                 id="browser-loading1-waiter">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div prlx-start="margin-right: 100%; display:block;"
+                             prlx-end="margin-right: 0%; display:block;"
+                             prlx-ratio="2.8"
+                             prlx-after="browser-html1"
+                             prlx-wait="3"
+
+                             prlx-start-1="display:none;"
+                             prlx-end-1="display:none;"
+                             prlx-ratio-1="0"
+                             prlx-after-1="browser-loading2-waiter"
+                             class="prlx prlx-linked blue2"
+                             id="browser-loading2">
+                            &nbsp;
+                            <div prlx-start="display:none"
+                                 prlx-end="display:none"
+                                 prlx-ratio="3"
+                                 prlx-after="browser-loading2"
+                                 class="prlx"
+                                 id="browser-loading2-waiter">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div prlx-start="margin-right: 100%; display:block;"
+                             prlx-end="margin-right: 0%; display:block;"
+                             prlx-ratio="1.5"
+                             prlx-after="browser-html5-waiter"
+                             class="prlx prlx-linked blue3"
+                             id="browser-loading3">
+                            &nbsp;
+                            <div prlx-start="display:none"
+                                 prlx-end="display:none"
+                                 prlx-ratio="3"
+                                 prlx-after="browser-loading3"
+                                 class="prlx"
+                                 id="browser-loading3-waiter">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 0; display:block;"
+                         prlx-end="opacity: 1;"
+                         prlx-ratio="0.5"
+                         prlx-after="third"
+                         prlx-wait="0.2"
+
+                         prlx-start-1="display:none;"
+                         prlx-end-1="display:none;"
+                         prlx-ratio-1="0"
+                         prlx-after-1="txt-html5"
+                         class="prlx prlx-linked html1"
+                         id="browser-html1"
+                         data-bottom="display:none;">
+                        <div>
+                            <br />
+                            &#x3C;html&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;body&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;h1&#x3E;Ola mundo!&#x3C;/h1&#x3E;<br /><br />
+                            &nbsp;&nbsp;&#x3C;/body&#x3E;<br />
+                            <br />
+                            &#x3C;/html&#x3E;<br />
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 1; display:block;"
+                         prlx-end="opacity: 1;"
+                         prlx-ratio="0.5"
+                         prlx-after="txt-html5"
+
+
+                         prlx-start-1="display:none;"
+                         prlx-end-1="display:none;"
+                         prlx-ratio-1="0"
+                         prlx-after-1="browser-html5-waiter"
+                         class="prlx prlx-linked html1 html5"
+                         id="browser-html5"
+                         data-bottom="display:none;">
+                        <div>
+                            <div prlx-start="display:none"
+                                 prlx-end="display:none"
+                                 prlx-ratio="3"
+                                 prlx-after="browser-html5"
+                                 class="prlx"
+                                 id="browser-html5-waiter">
+                                &nbsp;
+                            </div>
+                            <br />
+                            &#x3C;html&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/head&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;body&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;h1&#x3E;Ola mundo!&#x3C;/h1&#x3E;<br /><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#x3C;section&#x3E;Bem vindo ao meu Curriculum&#x3C;/section&#x3E;<br />
+                            &nbsp;&nbsp;&#x3C;/body&#x3E;<br />
+                            <br />
+                            &#x3C;/html&#x3E;<br />
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 1; display:block;"
+                         prlx-end="opacity: 1; display:block;"
+                         prlx-ratio="1"
+                         prlx-after="browser-html5-waiter"
+                         prlx-wait="3"
+
+                         prlx-start-1="display:none;"
+                         prlx-end-1="display:none;"
+                         prlx-ratio-1="0"
+                         prlx-after-1="txt-css3"
+                         class="prlx prlx-linked"
+                         id="browser-rendered"
+                         data-bottom="display:none;">
+                        <div>
+                            <h1 style="margin-top:0;">Olá mundo!</h1>
+                            <section>Bem vindo ao meu Curriculum!</section>
+                        </div>
+                    </div>
+                    <div prlx-start="opacity: 0; display:block;"
+                         prlx-end="opacity: 1; display:block;"
+                         prlx-ratio="1"
+                         prlx-after="txt-css3"
+                         class="prlx"
+                         id="browser-rendered-css"
+                         data-bottom="display:none;">
+                        <div ng-app>
+                            <h1>Olá {{nome}}!</h1>
+                            <section id="pandox-section-box">Bem vindo ao meu Curriculum com CSS!</section>
+                            <div  prlx-start="opacity: 0;"
+                                  prlx-end="opacity: 1;"
+                                  prlx-ratio="2.8"
+                                  prlx-after="txt-jquery"
+                                  class="prlx"
+                                  id="color-picker-holder">
+                                <div class="blue color-picker" pandox-color="blue"></div>
+                                <div class="red color-picker" pandox-color="red"></div>
+                                <div class="yellow color-picker" pandox-color="yellow"></div>
+                            </div>
+                            <div  prlx-start="opacity: 0;"
+                                  prlx-end="opacity: 1;"
+                                  prlx-ratio="2.8"
+                                  prlx-after="txt-angular"
+                                  class="prlx"
+                                  id="angular-holder">
+                                Digite seu nome: <input ng-model="nome"/>
+                                &nbsp;
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div prlx-start="padding-left: 100%;"
+     prlx-end="padding-left: 50%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-holder"
+     id="third"
+     class="prlx">
+    <div class="container" style="margin-top:160px; position:fixed; z-index: 1;">
+        <h1>HTML</h1>
+    </div>
+</div>
+<div prlx-start="padding-left: 100%;"
+     prlx-end="padding-left: 50%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-html1"
+     prlx-wait="3"
+     id="txt-html5"
+     class="prlx">
+    <div class="container" style="margin-top:180px; position:fixed; z-index: 1;">
+        <h1>HTML5</h1>
+    </div>
+</div>
+
+<div prlx-start="padding-left: 100%;"
+     prlx-end="padding-left: 50%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-rendered"
+     prlx-wait="3"
+     id="txt-css3"
+     class="prlx">
+    <div class="container" style="margin-top:200px; position:fixed; z-index: 1;">
+        <h1>CSS3</h1>
+    </div>
+</div>
+
+
+<div prlx-start="padding-left: 100%;"
+     prlx-end="padding-left: 50%;"
+     prlx-ratio="2.8"
+     prlx-after="browser-rendered-css"
+     prlx-wait="3"
+     id="txt-jquery"
+     class="prlx">
+    <div class="container" style="margin-top:160px; position:fixed; z-index: 1;">
+        <h1>jQuery</h1>
+    </div>
+</div>
+
+
+<div prlx-start="padding-left: 100%;"
+     prlx-end="padding-left: 50%;"
+     prlx-ratio="2.8"
+     prlx-after="color-picker-holder"
+     prlx-wait="3"
+     id="txt-angular"
+     class="prlx">
+    <div class="container" style="margin-top:140px; position:fixed; z-index: 1;">
+        <h1>AngularJS</h1>
+    </div>
+</div>
+
