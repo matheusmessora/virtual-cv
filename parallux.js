@@ -14,12 +14,10 @@ PARALLUX.SYSTEM = function () {
 
         getAll();
         getNexts(0);
-        print(elements);
 
         elements[0].finished = 1;
         calculate(elements, 1, 0);
 
-        print(sectionElements);
         calculate(sectionElements, 1, 1);
     };
 
@@ -71,7 +69,7 @@ PARALLUX.SYSTEM = function () {
     };
 
     var getByID = function(id){
-        console.log("finding:" + id);
+        //console.log("finding:" + id);
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
 
@@ -120,32 +118,52 @@ PARALLUX.SYSTEM = function () {
     };
 
     var time = function(element, startAt, section){
+        var finishAt;
+        var ratio;
+        var data_start;
+        var data_end;
+        var wait;
+        var startAfter;
         if(section === 0){
-            var ratio = element.dom.attr("prlx-ratio");
+            ratio = element.dom.attr("prlx-ratio");
+            data_start = element.dom.attr("prlx-start");
+            data_end = element.dom.attr("prlx-end");
+            wait = getWait(element, section);
+            startAfter = startAt + (wait * config.frameCount);
+            finishAt = startAfter + (config.frameCount * ratio);
 
-            var data_start = element.dom.attr("prlx-start");
-            var data_end = element.dom.attr("prlx-end");
-            var finishAt = startAt + (config.frameCount * ratio);
-
-            element.dom.attr("data-" + startAt + "-start", data_start);
+            element.dom.attr("data-" + startAfter + "-start", data_start);
             element.dom.attr("data-" + finishAt + "-start", data_end);
 
             element.finished = finishAt;
-            return finishAt;
         }else {
-            var ratio = element.dom.attr("prlx-ratio-"+section);
+            ratio = element.dom.attr("prlx-ratio-"+section);
+            data_start = element.dom.attr("prlx-start-"+section);
+            data_end = element.dom.attr("prlx-end-"+section);
+            wait = getWait(element, section);
+            startAfter = startAt + (wait * config.frameCount);
+            finishAt = startAfter + (config.frameCount * ratio);
 
-            var data_start = element.dom.attr("prlx-start-"+section);
-            var data_end = element.dom.attr("prlx-end-"+section);
-            var finishAt = startAt + (config.frameCount * ratio);
-
-            element.dom.attr("data-" + startAt + "-start", data_start);
+            element.dom.attr("data-" + startAfter + "-start", data_start);
             element.dom.attr("data-" + finishAt + "-start", data_end);
 
             element.finished = finishAt;
-            return finishAt;
+        }
+        console.log("time:" + element.id + ", section=" + section + ", startAt=" + startAt + ", finishAt=" + finishAt + ", wait=" + wait + ", ratio=" + ratio);
+        return finishAt;
+    };
+
+    var getWait = function(element, section){
+        var wait;
+        if(section === 0){
+            wait = element.dom.attr("prlx-wait");
+        }else {
+            wait = element.dom.attr("prlx-wait-" + section);
         }
 
+        if(wait === undefined)
+            return 0;
+        return wait;
     };
 
     return {
